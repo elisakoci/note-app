@@ -1,5 +1,6 @@
 import { HomeOutlined, HeartOutlined, UserOutlined } from "@ant-design/icons";
 import { Layout, Menu, Input, Avatar } from "antd";
+import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
 const { Search } = Input;
@@ -21,22 +22,18 @@ const AppSidebar = ({ collapsed }) => {
     >
       {/* <Search placeholder="input search text" style={{ padding: "10px" }} /> */}
       <Menu
-        style={{ backgroundColor: "#abcdde" , marginTop: "100px"}}
+        style={{ backgroundColor: "#abcdde", marginTop: "100px" }}
         mode="inline"
-        defaultSelectedKeys={["1"]}
-        items={[
-          {
-            key: "1",
-            icon: <HomeOutlined />,
-            label: "Notes",
-          },
-          {
-            key: "2",
-            icon: <HeartOutlined />,
-            label: "Favorites",
-          },
-        ]}
-      />
+        defaultSelectedKeys={["notes"]}
+      >
+        <Menu.Item key="notes" icon={<HomeOutlined />}>
+          <Link to="/">Notes</Link>
+        </Menu.Item>
+        <Menu.Item key="favorites" icon={<HeartOutlined />}>
+          <Link to="/favorites">Favorites</Link>
+        </Menu.Item>
+      </Menu>
+
       {/* <div>
         <Avatar icon={<UserOutlined />} />
       </div> */}
