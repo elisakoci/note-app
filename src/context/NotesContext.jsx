@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const NotesContext = createContext();
+export const NotesContext = createContext();
 
 const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
