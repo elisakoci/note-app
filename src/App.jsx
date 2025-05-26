@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useState } from "react";
+import { Layout } from "antd";
+import AppSidebar from "./layouts/AppSidebar";
+import AppHeader from "./layouts/AppHeader";
+import "./layouts/LayoutStyles.css";
+
+const { Header, Content } = Layout;
+
+const App = () => {
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Layout className="main-layout">
+      <AppSidebar collapsed={collapsed} />
+      <Layout>
+        <Header style={{ padding: 0 }}>
+          <AppHeader collapsed={collapsed} setCollapsed={setCollapsed} />
+        </Header>
+        <Content
+          style={{
+            margin: 10,
+            padding: 24,
+            borderRadius: "8px",
+            backgroundColor: "white",
+          }}
+        >
+          content
+        </Content>
+      </Layout>
+    </Layout>
+  );
+};
 
-export default App
+export default App;
