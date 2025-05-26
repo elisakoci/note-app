@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import NotesContext from "./NotesProvider";
+import { NotesContext } from "./NotesContext";
 
-const useNotesData = () => {
+export const useNotesData = () => {
   const context = useContext(NotesContext);
 
   if (!context) {
@@ -10,5 +10,3 @@ const useNotesData = () => {
 
   return context;
 };
-
-export default useNotesData;
