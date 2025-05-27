@@ -17,6 +17,7 @@ const NoteItem = ({ note }) => {
     e.stopPropagation();
     deleteNote(note.id);
   };
+
   return (
     <List.Item
       actions={[

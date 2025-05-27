@@ -1,4 +1,9 @@
-import { HomeOutlined, HeartOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  HomeOutlined,
+  HeartOutlined,
+  FolderOpenOutlined,
+  ProductOutlined,
+} from "@ant-design/icons";
 import { Layout, Menu, Avatar } from "antd";
 import { Link } from "react-router-dom";
 
@@ -11,7 +16,7 @@ const AppSidebar = ({ collapsed }) => {
       collapsible
       collapsed={collapsed}
       style={{
-        backgroundColor: "#abcdde",
+        backgroundColor: "#FFD54F",
         height: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -20,7 +25,7 @@ const AppSidebar = ({ collapsed }) => {
       }}
     >
       <Menu
-        style={{ backgroundColor: "#abcdde", marginTop: "100px" }}
+        style={{ backgroundColor: "#FFD54F", marginTop: "100px" }}
         mode="inline"
         defaultSelectedKeys={["notes"]}
       >
@@ -29,6 +34,12 @@ const AppSidebar = ({ collapsed }) => {
         </Menu.Item>
         <Menu.Item key="favorites" icon={<HeartOutlined />}>
           <Link to="/favorites">Favorites</Link>
+        </Menu.Item>
+        <Menu.Item key="archieve" icon={<FolderOpenOutlined />}>
+          <Link to="/archieve">Archieve</Link>
+        </Menu.Item>
+        <Menu.Item key="category" icon={<ProductOutlined />}>
+          <Link to="/category">Category</Link>
         </Menu.Item>
       </Menu>
 

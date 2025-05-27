@@ -22,7 +22,7 @@ const AddNoteButton = () => {
       <Button
         type="primary"
         size="large"
-        style={{ backgroundColor: "#abcdde" }}
+        style={{ backgroundColor: "#FFD54F" }}
         onClick={() => setOpenModal(true)}
       >
         <PlusOutlined /> Add Note
