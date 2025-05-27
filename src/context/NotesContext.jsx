@@ -31,10 +31,12 @@ const NotesProvider = ({ children }) => {
     );
   };
 
-  const updateNote = (id, updatedNoteData) => {
-    setNotes((prev) =>
-      prev.map((note) =>
-        note.id === id ? { ...note, ...updatedNoteData } : note
+  const updateNote = (id, updatedTitle, updatedDescription) => {
+    setNotes((prevNotes) =>
+      prevNotes.map((note) =>
+        note.id === id
+          ? { ...note, title: updatedTitle, description: updatedDescription }
+          : note
       )
     );
   };
