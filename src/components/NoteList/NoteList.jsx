@@ -15,10 +15,8 @@ const NoteList = ({ notes }) => {
   return (
     <List
       dataSource={notes}
-      renderItem={(note) => (
-        <NoteItem note={note} />
-      )}
-      style={{ marginBottom: "10px"}}
+      renderItem={(note) => <NoteItem note={note} />}
+      style={{ marginBottom: "10px" }}
     />
   );
 };
