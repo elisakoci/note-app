@@ -1,4 +1,4 @@
-import { HeartOutlined, DeleteOutlined } from "@ant-design/icons";
+import { HeartOutlined, DeleteOutlined,HeartFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { useNotesData } from "../../context/useNotesData";
 import { Button, List } from "antd";
@@ -22,8 +22,11 @@ const NoteItem = ({ note }) => {
     <List.Item
       actions={[
         <Button
-          icon={<HeartOutlined />}
-          type={note?.favorite ? "primary" : "default"}
+          icon={note?.favorite ? (
+            <HeartFilled style={{ color: "#FFD54F" }} />
+          ) : (
+            <HeartOutlined />
+          )}
           onClick={handleFavoriteClick}
         />,
         <Button icon={<DeleteOutlined />} danger onClick={handleDeleteClick} />,
