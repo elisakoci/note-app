@@ -10,7 +10,6 @@ const FavoritesPage = () => {
       <Col>
         <h2>💛 Favorites</h2>
       </Col>
-
       <NoteList notes={favoriteNotes} />
     </>
   );

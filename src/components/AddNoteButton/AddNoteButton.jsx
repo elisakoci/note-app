@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
-import { Button, Modal, Input, Form, message } from "antd";
+import { Button, message } from "antd";
 import { useNotesData } from "../../context/useNotesData";
+import NoteModalForm from "../NoteModal/NoteModalForm";
 
 const AddNoteButton = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [form] = Form.useForm();
   const { addNote } = useNotesData();
 
-  const handleOk = () => {
-    form.validateFields().then(({ title, description }) => {
-      addNote(title, description);
-      form.resetFields();
-      setOpenModal(false);
-      message.success("Note added successfully!");
-    });
+  const handleSubmit = ({ title, description }) => {
+    addNote(title, description);
+    setOpenModal(false);
+    message.success("Note added successfully!");
   };
 
   return (
@@ -27,29 +24,12 @@ const AddNoteButton = () => {
       >
         <PlusOutlined /> Add Note
       </Button>
-      <Modal
-        title="Add Note"
+      <NoteModalForm
         open={openModal}
-        onOk={handleOk}
         onCancel={() => setOpenModal(false)}
-      >
-        <Form form={form} layout="vertical">
-          <Form.Item
-            name="title"
-            label="Title"
-            rules={[{ required: true, message: "Title is required" }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name="description"
-            label="Description"
-            rules={[{ required: true, message: "Description is required" }]}
-          >
-            <Input.TextArea rows={4} />
-          </Form.Item>
-        </Form>
-      </Modal>
+        onSubmit={handleSubmit}
+        isEdit={false}
+      />
     </>
   );
 };

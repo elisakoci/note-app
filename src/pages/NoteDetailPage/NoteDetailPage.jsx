@@ -1,7 +1,8 @@
 import { Breadcrumb, Card, Typography, Space, Button, message } from "antd";
-import { HeartOutlined, EditOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { Link, useParams } from "react-router-dom";
 import { useNotesData } from "../../context/useNotesData";
+import EditNoteButton from "../../components/EditNoteButton/EditNoteButton";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -18,10 +19,6 @@ const NoteDetailPage = () => {
     );
   };
 
-  const handleEdit = () => {
-    message.info("test");
-  };
-
   return (
     <>
       <Breadcrumb
@@ -36,13 +33,16 @@ const NoteDetailPage = () => {
         }
         extra={
           <Space>
-            <Button icon={<EditOutlined />} onClick={handleEdit} type="default">
-              Edit
-            </Button>
+            <EditNoteButton note={note} />
             <Button
-              icon={<HeartOutlined />}
+              icon={
+                note?.favorite ? (
+                  <HeartFilled style={{ color: "#FFD54F" }} />
+                ) : (
+                  <HeartOutlined />
+                )
+              }
               onClick={handleFavorite}
-              type={note?.favorite ? "primary" : "default"}
             >
               {note?.favorite ? "Unfavorite" : "Favorite"}
             </Button>
