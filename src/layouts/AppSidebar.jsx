@@ -1,9 +1,8 @@
 import { HomeOutlined, HeartOutlined, UserOutlined } from "@ant-design/icons";
-import { Layout, Menu, Input, Avatar } from "antd";
+import { Layout, Menu, Avatar } from "antd";
 import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
-const { Search } = Input;
 
 const AppSidebar = ({ collapsed }) => {
   return (
@@ -20,7 +19,6 @@ const AppSidebar = ({ collapsed }) => {
         padding: "16px 0",
       }}
     >
-      {/* <Search placeholder="input search text" style={{ padding: "10px" }} /> */}
       <Menu
         style={{ backgroundColor: "#abcdde", marginTop: "100px" }}
         mode="inline"
