@@ -8,18 +8,22 @@ const NotesPage = () => {
   const { notes } = useNotesData();
   return (
     <>
-      <Row justify="end">
-        <Col>
-          <Search
-            placeholder="input search text"
-            allowClear
-            enterButton="Search"
-            size="large"
-          />
-        </Col>
-      </Row>
-      <NoteList notes={notes} />
-    </>
+    <Row justify="space-between" align="middle" style={{ marginBottom: 16 }}>
+      <Col>
+        <h2>📝 My Notes</h2>
+      </Col>
+      <Col>
+        <Search
+          placeholder="Search notes"
+          allowClear
+          enterButton="Search"
+          size="large"
+        />
+      </Col>
+    </Row>
+
+    <NoteList notes={notes} />
+  </>
   );
 };
 

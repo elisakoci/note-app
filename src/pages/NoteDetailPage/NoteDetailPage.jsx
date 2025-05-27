@@ -8,8 +8,8 @@ const { Title, Paragraph, Text } = Typography;
 const NoteDetailPage = () => {
   const { id } = useParams();
   const { notes, favoriteNote } = useNotesData();
-  const note = notes.find((n) => n.id === id);
-  console.log(8373, notes);
+  const note = notes.find((n) => n.id === Number(id));
+  console.log(8373, note);
 
   const handleFavorite = () => {
     favoriteNote(note.id);
