@@ -7,12 +7,16 @@ const NotFoundPage = () => {
 
   return (
     <Result
-      icon={<RobotOutlined style={{ fontSize: "72px", color: "#ff4d4f" }} />}
+      icon={<RobotOutlined />}
       status="404"
       title="Oops! Page Not Found"
       subTitle="The robot looked everywhere, but couldn't find what you're looking for."
       extra={
-        <Button type="primary" onClick={() => navigate("/")}>
+        <Button
+          type="primary"
+          onClick={() => navigate("/")}
+          style={{ backgroundColor: "#FFD54F" }}
+        >
           Go Back to Notes
         </Button>
       }
