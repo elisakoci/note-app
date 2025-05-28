@@ -6,7 +6,7 @@ A notes management application built with **React**, **Ant Design**, and **React
 
 ## 🚀 Features
 
-- 📝 Create, edit, and delete notes
+- 📝 Create, edit, search and delete notes
 - 💛 Mark notes as favorites
 - 📂 View note details
 - 🧭 Navigate with React Router

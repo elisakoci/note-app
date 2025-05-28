@@ -7,7 +7,7 @@ const NoteList = ({ notes }) => {
   if (!notes.length) {
     return (
       <Empty
-        image={<SmileOutlined style={{ fontSize: 48, color: "#52c41a" }} />}
+        image={<SmileOutlined style={{ fontSize: 48, color: "#FFD54F" }} />}
         description="You don't have any notes yet. Go ahead and create one!"
       />
     );
